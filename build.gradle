@@ -1,0 +1,62 @@
+project.ext {
+   //spring boot version
+   projectVersion = "0.1"
+   springBootVersion = "2.1.0.RELEASE"
+   lombokVersion = "1.16.20"
+   springDataVersion = "1.4.1.RELEASE"
+   springVersion = "4.1.6.RELEASE"
+   jodaVersion = "2.9.2"
+   javaxvalidation = "2.0.0.Final"
+   springBootVersion = "1.4.0.RELEASE"
+   springVersion = "4.3.2.RELEASE"
+   springdata = "2.0.2.RELEASE"
+   springDataCommon = "1.4.1.RELEASE"
+}
+
+/// ---- project varibales and properties -----
+project.ext.joda = ["joda-time:joda-time:${jodaVersion}"]
+project.ext.lombok = ["org.projectlombok:lombok:${lombokVersion}"]
+project.ext.javaxValidation = ["javax.validation:validation-api:${javaxvalidation}"]
+
+project.ext.springBoot = ["org.springframework.boot:spring-boot-loader:${springBootVersion}",
+                          "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+                          "org.springframework:spring-tx:4.1.4.RELEASE",
+                          "org.springframework.boot:spring-boot-starter-web",
+                          "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
+]
+
+project.ext.springAll = ["org.springframework:spring-core:${springVersion}",
+                         "org.springframework:spring-jdbc:${springVersion}",
+                         "org.springframework:spring-aop:${springVersion}",
+                         "org.springframework:spring-beans:${springVersion}",
+                         "org.springframework:spring-context:${springVersion}"
+]
+
+project.ext.springData = ["org.springframework.data:spring-data-mongodb:${springdata}",
+                          "org.springframework.data:spring-data-commons-core:${springDataCommon}"
+]
+
+buildscript {
+   repositories {
+      mavenCentral()
+   }
+   dependencies {
+      classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+   }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+allprojects {
+   apply plugin: 'java'
+   apply plugin: 'groovy'
+
+   repositories {
+      mavenCentral()
+   }
+
+   dependencies {
+      compile joda, lombok, javaxValidation
+   }
+}

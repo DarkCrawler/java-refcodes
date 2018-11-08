@@ -1,0 +1,11 @@
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+   mainClassName = 'com.tags.camel.Main'
+   baseName = 'jref-camel'
+   version = '0.1.0'
+}
+
+dependencies {
+   compile rootProject.springBoot
+}

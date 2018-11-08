@@ -1,0 +1,12 @@
+apply plugin: 'org.springframework.boot'
+
+bootJar {
+   mainClassName = 'com.tags.rest.RestMain'
+   baseName = 'jref-rest'
+   version = '0.1.0'
+}
+
+dependencies {
+   compile rootProject.springBoot
+   compile rootProject.lombok
+}
