@@ -2,7 +2,7 @@ package com.tags.plainj.lombokref;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+//@Slf4j
 public class Main {
    public static void main(String[] args) {
       LombokTest obj1 = LombokTest.builder().name("T1").age(23).build();

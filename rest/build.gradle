@@ -9,4 +9,5 @@ bootJar {
 dependencies {
    compile rootProject.springBoot
    compile rootProject.lombok
+   compile project(':commons:models')
 }

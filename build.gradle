@@ -11,6 +11,9 @@ project.ext {
    springVersion = "4.3.2.RELEASE"
    springdata = "2.0.2.RELEASE"
    springDataCommon = "1.4.1.RELEASE"
+   log4j2Version = "1.2.0.RELEASE"
+   slf4jVersion = "1.6.3"
+   log4jVersion = "1.2.17"
 }
 
 /// ---- project varibales and properties -----
@@ -36,6 +39,15 @@ project.ext.springData = ["org.springframework.data:spring-data-mongodb:${spring
                           "org.springframework.data:spring-data-commons-core:${springDataCommon}"
 ]
 
+project.ext.loggers = ["log4j:log4j:${log4jVersion}",
+                       "org.slf4j:slf4j-log4j12:${slf4jVersion}",
+                       "org.slf4j:slf4j-api:${slf4jVersion}",
+]
+
+//Maps, for example [group: 'org.gradle', name: 'gradle-core', version: '1.0'].
+
+project.ext.fileutils = ["com.fasterxml.jackson.core:jackson-databind"]
+
 buildscript {
    repositories {
       mavenCentral()
@@ -48,9 +60,11 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 
+
 allprojects {
    apply plugin: 'java'
    apply plugin: 'groovy'
+   apply plugin: 'idea'
 
    repositories {
       mavenCentral()
@@ -58,5 +72,12 @@ allprojects {
 
    dependencies {
       compile joda, lombok, javaxValidation
+      compile loggers
+   }
+
+   configurations {
+      // Spring boot bug, self-includes both log4J and logback and fails
+      all*.exclude group: 'ch.qos.logback', module: 'logback-classic'
+      all*.exclude group: 'ch.qos.logback', module: 'logback-core'
    }
 }

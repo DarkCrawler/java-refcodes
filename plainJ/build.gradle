@@ -1,3 +1,4 @@
 dependencies {
    compile rootProject.lombok
+   compile rootProject.joda
 }

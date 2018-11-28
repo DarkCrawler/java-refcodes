@@ -1,3 +1,6 @@
 include 'camel'
 include 'rest'
 include 'plainj'
+include 'rconsumers'
+include 'commons'
+include 'commons:models'

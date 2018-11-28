@@ -10,7 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/camel" />
+            <option value="$PROJECT_DIR$/commons" />
+            <option value="$PROJECT_DIR$/commons/models" />
             <option value="$PROJECT_DIR$/plainJ" />
+            <option value="$PROJECT_DIR$/rconsumers" />
             <option value="$PROJECT_DIR$/rest" />
           </set>
         </option>
