@@ -14,6 +14,8 @@ project.ext {
    log4j2Version = "1.2.0.RELEASE"
    slf4jVersion = "1.6.3"
    log4jVersion = "1.2.17"
+   groovySpockVersion = "1.2-groovy-2.5"
+   groovyVersion = "2.5.4"
 }
 
 /// ---- project varibales and properties -----
@@ -21,18 +23,21 @@ project.ext.joda = ["joda-time:joda-time:${jodaVersion}"]
 project.ext.lombok = ["org.projectlombok:lombok:${lombokVersion}"]
 project.ext.javaxValidation = ["javax.validation:validation-api:${javaxvalidation}"]
 
-project.ext.springBoot = ["org.springframework.boot:spring-boot-loader:${springBootVersion}",
-                          "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
-                          "org.springframework:spring-tx:4.1.4.RELEASE",
-                          "org.springframework.boot:spring-boot-starter-web",
-                          "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
+//"org.springframework:spring-tx:4.1.4.RELEASE",
+//"org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}"
+//"org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+
+project.ext.springBoot = [
+        "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 ]
 
 project.ext.springAll = ["org.springframework:spring-core:${springVersion}",
                          "org.springframework:spring-jdbc:${springVersion}",
                          "org.springframework:spring-aop:${springVersion}",
                          "org.springframework:spring-beans:${springVersion}",
-                         "org.springframework:spring-context:${springVersion}"
+                         "org.springframework:spring-context:${springVersion}",
+                         "org.springframework:spring-web:${springVersion}",
+                         "org.springframework:spring-webmvc:${springVersion}"
 ]
 
 project.ext.springData = ["org.springframework.data:spring-data-mongodb:${springdata}",
@@ -44,7 +49,18 @@ project.ext.loggers = ["log4j:log4j:${log4jVersion}",
                        "org.slf4j:slf4j-api:${slf4jVersion}",
 ]
 
+project.ext.springSecutiry = [
+        "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
+]
+
 //Maps, for example [group: 'org.gradle', name: 'gradle-core', version: '1.0'].
+
+//TESTING LIBS"
+project.ext.testLibs = [
+        "org.spockframework:spock-core:${groovySpockVersion}",
+        "org.codehaus.groovy:groovy-all:${groovyVersion}" //, ext: 'pom'
+
+]
 
 project.ext.fileutils = ["com.fasterxml.jackson.core:jackson-databind"]
 

@@ -1,16 +1,17 @@
 apply plugin: 'org.springframework.boot'
 
 bootJar {
-   mainClassName = 'com.tags.rest.RestMain'
-   baseName = 'jref-rest'
+   mainClassName = 'com.tags.rconsumers.ConsumerMain'
+   baseName = 'jref-restconsumer'
    version = '0.1.0'
 }
 
 dependencies {
    implementation rootProject.lombok
-   implementation rootProject.springSecutiry
+   //implementation rootProject.springSecutiry
    implementation project(':commons:models')
    implementation rootProject.springBoot
+   implementation 'javax.servlet:servlet-api:2.5'
 }
 
 //// compile rootProject.springAll

@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerMain {
    public static void main(String[] args) {
       RestTemplate restTemplate = new RestTemplate();
-      SimpleGreetingModel model = restTemplate.getForObject("http://localhost:8070/greeting?name=Tim", SimpleGreetingModel.class);
+      SimpleGreetingModel model = restTemplate.getForObject("http://localhost:8070/GREETING?name=Tim", SimpleGreetingModel.class);
       System.out.println("=====>" + model.toString());
    }
 }

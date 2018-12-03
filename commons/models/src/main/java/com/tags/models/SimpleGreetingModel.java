@@ -11,4 +11,5 @@ import lombok.*;
 public class SimpleGreetingModel {
    private long id;
    private String content;
+   private String message;
 }
