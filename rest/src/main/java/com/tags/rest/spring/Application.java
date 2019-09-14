@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @Configuration
 @ComponentScan(basePackages = "com.tags.rest")
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 public class Application extends WebMvcConfigurerAdapter {
 
    @Resource

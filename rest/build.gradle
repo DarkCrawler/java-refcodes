@@ -12,7 +12,3 @@ dependencies {
    implementation project(':commons:models')
    implementation rootProject.springBoot
 }
-
-//// compile rootProject.springAll
-//implementation 'org.springframework:spring-web:3.2.6.RELEASE'
-//implementation 'org.springframework:spring-webmvc:3.2.6.RELEASE'
